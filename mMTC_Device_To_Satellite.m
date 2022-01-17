@@ -155,7 +155,7 @@ for count=1:3
                 L_int=zeros(1,simultaneous);
                 L_Lin_int=zeros(1,simultaneous);
                 
-                L_int  = Lo + 10*eta*log10( Location_Nodes_Int/do) + std*randn(1,1);
+                L_int  = Lo + 10*eta*log10(dPropogation/do) + std*randn(1,1);
                 L_Lin_int=10.^((L_int)./10);
                 
                 %% total interferance = sum of all the interfering signals 
