@@ -114,7 +114,9 @@ for count=1:3
                   Interfering_Nodes_Y = Satellite_Link_Farms(c,index,2);
                   
                   Interfering_Nodes =[Interfering_Nodes_X', Interfering_Nodes_Y'];
-                  Location_Nodes_Int = sqrt((Interfering_Nodes(:,1)-Grid(Satellite_subpoint,1)).^2 + (Interfering_Nodes(:,2)-Grid(Satellite_subpoint,2)).^2)';
+                  % Updated February 22, 2022
+                  %Location_Nodes_Int = sqrt((Interfering_Nodes(:,1)-Grid(Satellite_subpoint,1)).^2 + (Interfering_Nodes(:,2)-Grid(Satellite_subpoint,2)).^2)';
+                  Location_Nodes_Int = sqrt((Interfering_Nodes(:,1)-Satellite_Link_Farms(c,GW_at_WT,1)).^2 + (Interfering_Nodes(:,2)-Satellite_Link_Farms(c,GW_at_WT,2)).^2)';
                   
    
                 clear dPropogation
