@@ -4,7 +4,7 @@ function [P_SNR] = Probability_SNR (Pt,Gt,Gr,k,D_SNR,Distance,MonteCarlo,wavelen
 
 %R = (sigma*G + mu) + j*(sigma*G + mu);
 
-%A. Gaysin, V. Fadeev and M. Hennhöfer, "Survey of modulation and coding schemes for application in CubeSat systems," 
+%A. Gaysin, V. Fadeev and M. HennhÃ¶fer, "Survey of modulation and coding schemes for application in CubeSat systems," 
 %2017 Systems of Signal Synchronization, Generating and Processing in Telecommunications (SINKHROINFO), Kazan, 2017,
 
 %https://ieeexplore.ieee.org/abstract/document/7997514
@@ -47,9 +47,9 @@ for i=1:3 % SF 7, SF10 and SF12
         L(pointer,:)  = Lo + 10*eta*log10(Distance(pointer)/do) + std*randn(1,MonteCarlo);
         
         %% Pr = pt*Gt*Gr*path loss * h  
-        L_Lin(pointer)=10.^((L(pointer))./10);
+        L_Lin(pointer,:)=10.^((L(pointer,:))./10);
         
-        pr = Pt.*Gt.*Gr.*h1.*(1./L_Lin(pointer));
+        pr = Pt.*Gt.*Gr.*h1.*(1./L_Lin(pointer,:));
 
 
         %% P_SNR = Probability(SNR > D_SNR)
